@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+ Detail Page 
+{% endblock title %}
+
+{% block content %}
+
+<br>
+<br>
+<br>
+<br>
+
+<div class="card-deck">
+  <div class="card">
+    <img class="card-img-top" src="{{object_list.image.url}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Name:{{object_list.name}}</h5>
+      <p class="card-text">Description:{{object_list.description}}</p>
+      </div>
+      <div class="card-footer">
+      <small class="text-muted">Established:{{object_list.established}}</small>
+    </div>
+  </div>
+</div>
+  
+<a href="{% url 'list' %}">
+  <p>
+    Back to the business list
+  </p>
+  </a>
+{% endblock content %}

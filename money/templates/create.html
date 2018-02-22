@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block title %}
+ Create Page 
+{% endblock title %}
+
+{% block content %}
+
+<br>
+<br>
+<br>
+<br>
+
+<form action="{% url 'create' %}" method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{form|crispy}}
+  <button type="submit" class="btn btn-outline-success">Create</button>
+</form>
+  
+<a href="{% url 'list' %}">
+  <p>
+    Back to the business list
+  </p>
+  </a>
+{% endblock content %}

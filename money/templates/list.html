@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+ List Page 
+{% endblock title %}
+
+{% block content %}
+
+<p> Top business of 2018!</p>
+
+{% for bzbz in cash %}
+<div class="card-deck">
+  <div class="card">
+  	{% if bzbz.image %}
+    <img class="card-img-top" src="{{bzbz.image.url}}" alt="Card image cap">
+    {% endif %}
+    <div class="card-body">
+      <h5 class="card-title">{{bzbz.name}}</h5>
+      <p class="card-text">{{bzbz.description}}</p>
+      </div>
+      <div class="card-footer">
+      <small class="text-muted">Established on: {{bzbz.established}}</small>
+      <a href="{% url 'update' business_id=bzbz.id %}"><button type="submit"  class="btn btn-success">Update</button></a>
+      <a href="{% url 'delete' business_id=bzbz.id %}"><button type="submit"  class="btn btn-danger">Delete</button></a>
+    
+    </div>
+  </div>
+</div>
+  
+{% endfor %}
+
+{% endblock content %}
+
+
+
