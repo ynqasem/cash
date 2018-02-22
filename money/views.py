@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Business
-from .forms import BusinessForm
+from .forms import BusinessForm, SignupForm, LoginForm
 from django.contrib.auth import login, logout, authenticate
 
 
@@ -63,12 +63,12 @@ def signup(request):
 	return render(request, 'signup.html', context)
 
 
-def logout(request):
+def userlogout(request):
     logout(request)
     return redirect('login')
 
 
-def login(request):
+def userlogin(request):
 	form = LoginForm()
 	if request.method == "POST":
 		form = LoginForm(request.POST)

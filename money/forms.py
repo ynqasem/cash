@@ -16,7 +16,7 @@ class BusinessForm(forms.ModelForm):
 class SignupForm(forms.ModelForm):
 	class Meta:
 		model = User
-		fields = ["username", "email", "firstname", "lastname", "password"]
+		fields = ["username", "email", "first_name", "last_name", "password"]
 		widgets ={
 		"password": forms.PasswordInput()
 		}

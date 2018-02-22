@@ -11,12 +11,13 @@ urlpatterns = [
     path('create/', views.create, name='create'),
     path('update/<int:business_id>/', views.update, name='update'),
     path('delete/<int:business_id>/', views.delete, name='delete'),
-    # path('login/', views.login, name='login'),
-    # path('logout/', views.logout, name='logout'),
-    # path('signup/', views.signup, name='signup'),
+    path('login/', views.userlogin, name='login'),
+    path('logout/', views.userlogout, name='logout'),
+    path('signup/', views.signup, name='signup'),
 
     ]
 
 if settings.DEBUG:
     urlpatterns+=static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
